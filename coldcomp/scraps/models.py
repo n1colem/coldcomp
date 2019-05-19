@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 #scraps are like tiny blogs and concepts. they should be really shortand just text based.
@@ -9,9 +10,14 @@ from django.utils import timezone
 
 class Scrap(models.Model):
     title = models.CharField(max_length=256)
+    slug = models.SlugField(max_length=250, unique=True, null=True)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     body = models.TextField(blank=True)
     posted = models.DateTimeField(default=timezone.now)
     mood = models.ForeignKey('Mood', on_delete=models.SET_NULL, null=True, blank=True)
+
+    class Meta:
+        ordering = ('-posted',)
 
     def __str__(self):
         return "%s (%s)" % (self.title)
