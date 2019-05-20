@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 #scraps are like tiny blogs and concepts. they should be really shortand just text based.
@@ -24,6 +25,9 @@ class Scrap(models.Model):
 
     def __repr__(self):
         return '<Scrap {}: {}>'.format(self.id, self.title)
+
+    def get_absolute_url(self):
+        return reverse('scrap_detail', kwargs={'pk': self.pk})
 
 class Mood(models.Model):
     title = models.CharField(max_length=100)

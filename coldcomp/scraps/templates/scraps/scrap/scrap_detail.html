@@ -1,0 +1,12 @@
+<!-- scrap_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %} {{ scrap.title }} {% endblock %}
+
+{% block body %}
+  <h1> {{ scrap.title }} </h1>
+  <p class="date">
+    {{scrap.posted}}
+  </p>
+  {{ scrap.body|linebreaks }}
+{% endblock &}
