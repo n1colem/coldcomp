@@ -27,7 +27,7 @@ class Scrap(models.Model):
         return '<Scrap {}: {}>'.format(self.id, self.title)
 
     def get_absolute_url(self):
-        return reverse('scrap_detail', kwargs={'pk': self.pk})
+        return reverse('scrap-detail', kwargs={'pk': self.pk})
 
 class Mood(models.Model):
     title = models.CharField(max_length=100)

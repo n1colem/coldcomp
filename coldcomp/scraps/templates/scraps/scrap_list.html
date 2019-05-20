@@ -1,5 +1,5 @@
 <!-- scrap_list.html -->
-{% extends 'base.html' %}
+{% extends 'scraps/base.html' %}
 
 {% block title %}scraps{% endblock %}
 
@@ -14,10 +14,11 @@
           </a>
         </h1>
         <div class ="date">
-              <p>{ { scrap.posted }} </p>
+              <p>{{ scrap.posted }} </p>
         </div>
       {% endfor %}
     </div>
+  
   </div>
 </div>
 {% endblock %}
