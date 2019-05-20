@@ -4,4 +4,4 @@ python:
 install:
 - pip install -r requirements.txt
 script:
-- coverage run --source=ofcourse ofcourse/manage.py tes
+- coverage run --source=ofcourse ofcourse/manage.py test
