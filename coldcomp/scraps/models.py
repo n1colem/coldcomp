@@ -20,7 +20,7 @@ class Scrap(models.Model):
         ordering = ('-posted',)
 
     def __str__(self):
-        return "%s (%s)" % (self.title)
+        return self.title
 
     def __repr__(self):
         return '<Scrap {}: {}>'.format(self.id, self.title)
@@ -28,6 +28,9 @@ class Scrap(models.Model):
 class Mood(models.Model):
     title = models.CharField(max_length=100)
     color = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title
 
     def __repr__(self):
         return '<Mood {}: {}>'.format(self.id, self.title)

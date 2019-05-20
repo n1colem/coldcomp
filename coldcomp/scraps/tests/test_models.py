@@ -19,10 +19,10 @@ class ModelsTestCast(TestCase):
         self.assertEqual(repr(self.scrap1), '<Scrap 1: TestTitle>')
 
     def test_scrap_model(self):
-        self.assertEqual(str(self.scrap1), '<Scrap 1: TestTitle>')
+        self.assertEqual(str(self.scrap1), 'TestTitle')
 
     def test_mood_model(self):
         self.assertEqual(repr(self.mood1), '<Mood 1: shy>')
 
     def test_mood_model(self):
-        self.assertEqual(str(self.mood1), '<Mood 1: shy>')
+        self.assertEqual(str(self.mood1), 'shy')
