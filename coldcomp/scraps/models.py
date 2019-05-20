@@ -22,6 +22,12 @@ class Scrap(models.Model):
     def __str__(self):
         return "%s (%s)" % (self.title)
 
+    def __repr__(self):
+        return '<Scrap {}: {}>'.format(self.id, self.title)
+
 class Mood(models.Model):
     title = models.CharField(max_length=100)
     color = models.CharField(max_length=100)
+
+    def __repr__(self):
+        return '<Mood {}: {}>'.format(self.id, self.title)
