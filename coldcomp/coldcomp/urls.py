@@ -15,18 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from scraps.views import ScrapList
+from scraps.views import ScrapList, ScrapDetail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('scraps/', ScrapList.as_view(), name='scrap-list'),
-    path('scraps/add', ScrapCreate.as_view(), name='scrap-add'),
-    path('scraps/<int:pk>/edit', ScrapUpdate.as_view(), name='scrap-update'),
-    path('scraps/<int:pk>/delete', ScrapDelete.as_view(), name='scrap-delete'),
+#    path('scraps/add', ScrapCreate.as_view(), name='scrap-add'),
+#    path('scraps/<int:pk>/edit', ScrapUpdate.as_view(), name='scrap-update'),
+#    path('scraps/<int:pk>/delete', ScrapDelete.as_view(), name='scrap-delete'),
     path('scraps/<int:pk>', ScrapDetail.as_view(), name='scrap-detail'),
-    path('scraps/<slug:slug>', ScrapDetail.as_view(), name='scrap-detail-slug'),
-    path('scraps/<slug:slug>/edit', ScrapUpdate.as_view(), name='scrap-update-slug'),
-    path('scraps/<slug:slug>/delete', ScrapDelete.as_view(), name='scrap-delete-slug'),
-    path('accounts/', include('django.contrib.auth.urls'))
+#    path('scraps/<slug:slug>', ScrapDetail.as_view(), name='scrap-detail-slug'),
+#    path('scraps/<slug:slug>/edit', ScrapUpdate.as_view(), name='scrap-update-slug'),
+#    path('scraps/<slug:slug>/delete', ScrapDelete.as_view(), name='scrap-delete-slug'),
+#    path('accounts/', include('django.contrib.auth.urls'))
 
 ]
