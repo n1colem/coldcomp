@@ -1,7 +1,15 @@
 <!-- scrap_list.html -->
+
 {% extends 'scraps/base.html' %}
 
 {% block title %}scraps{% endblock %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+{% block supplemental_css %}
+<link rel="stylesheet" href="{% static 'scraps/scrapsstyle.css' %}">
+{% endblock %}
 
 {% block body %}
 <div class="container">
@@ -16,9 +24,10 @@
         <div class ="date">
               <p>{{ scrap.posted }} </p>
         </div>
+
       {% endfor %}
     </div>
-  
+
   </div>
 </div>
 {% endblock %}
