@@ -1,7 +1,11 @@
 <!-- scrap_list.html -->
-{% extends 'scraps/base.html' %}
 
+{% extends 'scraps/base.html' %}
+{% load static %}
 {% block title %}scraps{% endblock %}
+
+{% block supplemental_CSS %}
+<link rel="stylesheet" href="{% static 'css/scraps.css' %}">{% endblock %}
 
 {% block body %}
 <div class="container">
@@ -16,9 +20,10 @@
         <div class ="date">
               <p>{{ scrap.posted }} </p>
         </div>
+
       {% endfor %}
     </div>
-  
+
   </div>
 </div>
 {% endblock %}
