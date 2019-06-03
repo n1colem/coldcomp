@@ -14,8 +14,8 @@
 {% block body %}
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
-      {% for scrap in scraps %}
+  {% for scrap in scraps %}
+    <div class="col-md-4 themed-grid-col">
         <div class = "scrap">
           <h1><a href"{{ scrap.get_absolute_url }}">
             {{ scrap.title }}
@@ -24,7 +24,6 @@
         <div class ="date">
               <p>{{ scrap.posted }} </p>
         </div>
-
       {% endfor %}
     </div>
 
