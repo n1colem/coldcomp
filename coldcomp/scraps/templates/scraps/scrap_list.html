@@ -1,32 +1,29 @@
-<!-- scrap_list.html -->
-
-{% extends 'scraps/base.html' %}
+{% extends "./base.html" %}
+{% load static %}
 
 {% block title %}scraps{% endblock %}
-{% load static %}
-{% block css %}
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-{% endblock %}
+
+
 {% block supplemental_css %}
-<link rel="stylesheet" href="{% static 'scraps/scrapsstyle.css' %}">
+<link rel="stylesheet" href="{% static 'scraps/scrapsstyle.css' %}" >
 {% endblock %}
 
 {% block body %}
 <div class="container">
   <div class="row">
   {% for scrap in scraps %}
-    <div class="col-md-4 themed-grid-col">
+    <div class="col-md-6">
         <div class = "scrap">
-          <h1><a href"{{ scrap.get_absolute_url }}">
+          <h1><a href="{{ scrap.get_absolute_url }}">
             {{ scrap.title }}
           </a>
         </h1>
+        </div>
         <div class ="date">
               <p>{{ scrap.posted }} </p>
         </div>
-      {% endfor %}
     </div>
-
+      {% endfor %}
   </div>
 </div>
 {% endblock %}
