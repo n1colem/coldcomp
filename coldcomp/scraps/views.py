@@ -1,8 +1,10 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, FormView, TemplateView
+from django.views.generic.edit import CreateView
 from django.shortcuts import render, get_object_or_404
 from django.conf import settings
 
 from .models import Scrap, Mood
+from .forms import ScrapForm
 
 # Create your views here.
 
@@ -27,3 +29,9 @@ class ScrapDetail(DetailView):
         context = super(ScrapDetail, self).get_context_data(*args, **kwargs)
         context['mood'] = Mood.objects.all()
         return context
+
+class ScrapCreate(CreateView):
+    template_name ='scraps/new.html'
+    model = Scrap
+    permission_required = 'scraps.can_add'
+    form_class = ScrapForm
