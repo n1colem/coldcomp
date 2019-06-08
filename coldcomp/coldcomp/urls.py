@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from scraps.views import ScrapList, ScrapDetail
+from scraps.views import ScrapList, ScrapDetail, ScrapCreate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('scraps/', ScrapList.as_view(), name='scrap-list'),
-#    path('scraps/add', ScrapCreate.as_view(), name='scrap-add'),
+#    path('scraps/new', ScrapCreate.as_view(), name='scrap-new'),
+    path('scraps/new', ScrapCreate.as_view(), name='scrap-new'),
 #    path('scraps/<int:pk>/edit', ScrapUpdate.as_view(), name='scrap-update'),
 #    path('scraps/<int:pk>/delete', ScrapDelete.as_view(), name='scrap-delete'),
     path('scraps/<int:pk>', ScrapDetail.as_view(), name='scrap-detail'),

@@ -9,11 +9,10 @@
 {% endblock %}
 
 {% block body %}
-<p> just scraps </p>
   <div class="container">
   <div class="row">
   {% for scrap in scraps %}
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class = "scrap">
           <h3><a title="{{scrap.mood.title}}" href="/scraps/{{scrap.slug}}" style="color: #{{ scrap.mood.color }}" >
             {{ scrap.title }}
