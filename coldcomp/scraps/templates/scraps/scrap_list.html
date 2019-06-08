@@ -9,15 +9,16 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
+<p> just scraps </p>
+  <div class="container">
   <div class="row">
   {% for scrap in scraps %}
     <div class="col-md-6">
         <div class = "scrap">
-          <h1><a href="{{ scrap.get_absolute_url }}" style="color:{{ mood.color }};">
+          <h3><a title="{{scrap.mood.title}}" href="{{ scrap.get_absolute_url }}" style="color: #{{ scrap.mood.color }}" >
             {{ scrap.title }}
           </a>
-        </h1>
+        </h3>
         </div>
         <div class ="date">
               <p>{{ scrap.posted }} </p>
