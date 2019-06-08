@@ -14,7 +14,7 @@
   {% for scrap in scraps %}
     <div class="col-md-6">
         <div class = "scrap">
-          <h1><a href="{{ scrap.get_absolute_url }}">
+          <h1><a href="{{ scrap.get_absolute_url }}" style="color:{{ mood.color }};">
             {{ scrap.title }}
           </a>
         </h1>
