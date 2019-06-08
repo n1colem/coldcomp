@@ -4,9 +4,9 @@
 {% block title %} {{ scrap.title }} {% endblock %}
 
 {% block body %}
-  <h1> {{ scrap.title }} </h1>
-  <p class="date">
+  <h1 style="color: #{{ scrap.mood.color }}"> {{ scrap.title }} </h1>
+  <p class="date" style="color: #{{ scrap.mood.color }}">
     {{scrap.posted}}
   </p>
-<p>  {{ scrap.body|linebreaks }} </p>
+<p style="color: #{{ scrap.mood.color }}">  {{ scrap.body|linebreaks }} </p>
 {% endblock %}
