@@ -24,7 +24,7 @@ urlpatterns = [
 #    path('scraps/<int:pk>/edit', ScrapUpdate.as_view(), name='scrap-update'),
 #    path('scraps/<int:pk>/delete', ScrapDelete.as_view(), name='scrap-delete'),
     path('scraps/<int:pk>', ScrapDetail.as_view(), name='scrap-detail'),
-#    path('scraps/<slug:slug>', ScrapDetail.as_view(), name='scrap-detail-slug'),
+    path('scraps/<slug:slug>', ScrapDetail.as_view(), name='scrap-detail-slug'),
 #    path('scraps/<slug:slug>/edit', ScrapUpdate.as_view(), name='scrap-update-slug'),
 #    path('scraps/<slug:slug>/delete', ScrapDelete.as_view(), name='scrap-delete-slug'),
 #    path('accounts/', include('django.contrib.auth.urls'))

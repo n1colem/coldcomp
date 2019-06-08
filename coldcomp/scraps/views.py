@@ -22,8 +22,8 @@ class ScrapDetail(DetailView):
     model = Scrap
     context_object_name = 'scrap'
     queryset = Scrap.objects.all()
-    
+
     def get_context_data(self, *args, **kwargs):
-        context = super(ScrapList, self).get_context_data(*args, **kwargs)
-        context['mood'] = Mood.objects.get()
+        context = super(ScrapDetail, self).get_context_data(*args, **kwargs)
+        context['mood'] = Mood.objects.all()
         return context

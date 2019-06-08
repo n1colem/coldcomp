@@ -20,11 +20,11 @@ class Scrap(models.Model):
     class Meta:
         ordering = ('-posted',)
 
-    def __str__(self):
-        return self.title
-
     def __repr__(self):
         return '<Scrap {}: {}>'.format(self.id, self.title)
+
+    def __str__(self):
+        return self.title
 
     def get_absolute_url(self):
         return reverse('scrap-detail', kwargs={'pk': self.pk})
