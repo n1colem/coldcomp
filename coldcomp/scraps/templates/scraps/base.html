@@ -20,11 +20,12 @@
 
    {% block header %}
    <div class="page-header">
-          <h1><a href = '/scraps'> scraps </a> {% if user.is_authenticated %}
-           for you,  {{ user.username }}, <a href="{% url 'scrap-new' %}" class="top-menu">say</a>, <a href="{% url 'logout' %}">or go </a>
+          <h3><a href = '/scraps'> scraps </a> {% if user.is_authenticated %}
+           for you,  {{ user.username }}, <a href="{% url 'scrap-new' %}" class="top-menu">say</a>, <a href="{% url 'logout' %}">or go...</a>
               {% else %}   <a href="{% url 'login' %}">for you?</a>
            {% endif %}
-          </h1>
+           <a href = '/search'> are you looking for something? </a>
+         </h3>
        </div>
    {% endblock %}
 
