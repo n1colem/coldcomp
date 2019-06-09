@@ -122,3 +122,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIR=['/scraps/static/scraps/'
 ]
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'

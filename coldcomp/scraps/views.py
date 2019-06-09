@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, FormView, TemplateView
 from django.views.generic.edit import CreateView
 from django.shortcuts import render, get_object_or_404
@@ -30,7 +31,7 @@ class ScrapDetail(DetailView):
         context['mood'] = Mood.objects.all()
         return context
 
-class ScrapCreate(CreateView):
+class ScrapCreate(LoginRequiredMixin, CreateView):
     template_name ='scraps/new.html'
     model = Scrap
     permission_required = 'scraps.can_add'

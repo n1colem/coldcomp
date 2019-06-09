@@ -14,11 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.views.generic.base import TemplateView
 from scraps.views import ScrapList, ScrapDetail, ScrapCreate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', TemplateView.as_view(template_name='scraps/home.html'), name='home'),
     path('scraps/', ScrapList.as_view(), name='scrap-list'),
 #    path('scraps/new', ScrapCreate.as_view(), name='scrap-new'),
     path('scraps/new', ScrapCreate.as_view(), name='scrap-new'),
@@ -28,5 +30,5 @@ urlpatterns = [
     path('scraps/<slug:slug>', ScrapDetail.as_view(), name='scrap-detail-slug'),
 #    path('scraps/<slug:slug>/edit', ScrapUpdate.as_view(), name='scrap-update-slug'),
 #    path('scraps/<slug:slug>/delete', ScrapDelete.as_view(), name='scrap-delete-slug'),
-#    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
