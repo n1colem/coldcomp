@@ -22,7 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='scraps/home.html'), name='home'),
     path('scraps/', ScrapList.as_view(), name='scrap-list'),
-#    path('scraps/new', ScrapCreate.as_view(), name='scrap-new'),
     path('scraps/new', ScrapCreate.as_view(), name='scrap-new'),
 #    path('scraps/<int:pk>/edit', ScrapUpdate.as_view(), name='scrap-update'),
 #    path('scraps/<int:pk>/delete', ScrapDelete.as_view(), name='scrap-delete'),

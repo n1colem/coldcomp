@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 from django.urls import reverse
+
 
 # Create your models here.
 #scraps are like tiny blogs and concepts. they should be really shortand just text based.
@@ -22,6 +24,10 @@ class Scrap(models.Model):
 
     def __repr__(self):
         return '<Scrap {}: {}>'.format(self.id, self.title)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Scrap, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.title

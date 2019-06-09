@@ -6,4 +6,4 @@ class ScrapForm(forms.ModelForm):
 
     class Meta:
         model = Scrap
-        fields = ['title', 'body', 'mood']
+        fields = ['title', 'author', 'body', 'mood']
