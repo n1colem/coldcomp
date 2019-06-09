@@ -1,1 +1,1 @@
-web: gunicorn coldcomp.wsgi --log-file -
+web: gunicorn coldcomp.coldcomp.wsgi --log-file -
