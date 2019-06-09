@@ -1,0 +1,29 @@
+{% extends "./base.html" %}
+{% load static %}
+
+{% block title %}scraps{% endblock %}
+
+
+{% block supplemental_css %}
+<link rel="stylesheet" href="{% static 'scraps/scrapsstyle.css' %}" >
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+  <div class="row">
+  {% for scrap in scraps %}
+    <div class="col-md-4">
+        <div class = "scrap">
+          <h3><a title="{{scrap.mood.title}}" href="/scraps/{{scrap.slug}}" style="color: #{{ scrap.mood.color }}" >
+            {{ scrap.title }}
+          </a>
+        </h3>
+        </div>
+        <div class ="date" style="color: #{{ scrap.mood.color }}"">
+              <p>{{ scrap.posted }} </p>
+        </div>
+    </div>
+      {% endfor %}
+  </div>
+</div>
+{% endblock %}

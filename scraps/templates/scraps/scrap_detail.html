@@ -1,0 +1,19 @@
+<!-- scrap_detail.html -->
+{% extends './base.html' %}
+{% load static %}
+
+{% block title %} {{ scrap.title }} {% endblock %}
+
+{% block supplemental_css %}
+<link rel="stylesheet" href="{% static 'scraps/scrapsstyle.css' %}" >
+{% endblock %}
+
+{% block body %}
+  <h1 style="color: #{{ scrap.mood.color }}"> {{ scrap.title }} </h1>
+  <p class="date" style="color: #{{ scrap.mood.color }}">
+    {{scrap.posted}}
+  </p>
+<div class="text" style="color: #{{ scrap.mood.color }}">  {{ scrap.body|linebreaks }}
+</div >
+
+{% endblock %}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %} cold computer {% endblock %}</title>
+    {% load static %}
+
+    {% block css %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% endblock %}
+
+    {% block supplemental_css %}
+    {% endblock %}
+
+    {% block early_js %}
+    {% endblock %}
+
+   {% block header %}
+   <div class="page-header">
+          <h3><a href = '/scraps'> scraps </a> {% if user.is_authenticated %}
+           for you,  {{ user.username }}, <a href="{% url 'scrap-new' %}" class="top-menu">say</a>, <a href="{% url 'logout' %}">or go...</a>
+              {% else %}   <a href="{% url 'login' %}">for you?</a>
+           {% endif %}
+           <a href = '/search'> are you looking for something? </a>
+         </h3>
+       </div>
+   {% endblock %}
+
+   {% block body %}
+   {% endblock %}
+
+   {% block footer %}
+   {% endblock %}
+
+   {% block js %}
+   {% endblock %}
+
+  {% block supplemental_js %}
+  {% endblock %}
+  </body>
+</html>
