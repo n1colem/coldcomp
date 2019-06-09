@@ -1,4 +1,0 @@
-{{ object.title}}
-{{ object.posted}}
-{{ object.body}}
-{{ object.get_mood_display }}
