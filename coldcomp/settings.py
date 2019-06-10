@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os.path
 import os
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 #searchbox
 es = urlparse(os.environ.get('SEARCHBOX_URL') or 'http://127.0.0.1:9200/')
