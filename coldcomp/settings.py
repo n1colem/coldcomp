@@ -32,7 +32,7 @@ SECRET_KEY = '7-vlb=sh3i(jo!an_@i@rzwmmg*3-e=h!f&25-ztl9dhhs$!=*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'localhost', 'www.cold.computer']
 
 
 # Application definition
