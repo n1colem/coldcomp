@@ -7,7 +7,7 @@ class ScrapIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
     mood = indexes.CharField(model_attr='mood')
 
-    def get_model (self) :
+    def get_model(self):
         return Scrap
 
     def index_queryset(self, using=None):
@@ -16,5 +16,5 @@ class ScrapIndex(indexes.SearchIndex, indexes.Indexable):
 class MoodIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
 
-    def get_model (self) :
+    def get_model(self):
         return Mood
