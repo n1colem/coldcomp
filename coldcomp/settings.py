@@ -17,7 +17,7 @@ from urllib.parse import urlparse
 #searchbox
 es = urlparse(os.environ.get('SEARCHBOX_URL') or 'http://127.0.0.1:9200/')
 
-port = es.port or 80
+port = es.port or 443
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
